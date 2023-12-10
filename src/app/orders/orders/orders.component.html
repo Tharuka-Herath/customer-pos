@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+<div class="container" >
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <select  #customerId class="form-control" [(ngModel)]="selectedValue">
+            <option [value]="tempCustomer.id" *ngFor="let tempCustomer of customerList">{{tempCustomer.id}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <input type="text" disabled class="form-control" id="name" *ngIf="selectedValue" value="{{SelectedName.name}}">
+      </div>
+      <div class="col-3">
+        <input type="text" disabled class="form-control" id="address" *ngIf="selectedValue" value="{{SelectedName.address}}">
+      </div>
+      <div class="col-3">
+        <input type="text" disabled class="form-control" id="salary" *ngIf="selectedValue" value="{{SelectedName.salary}}">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <select  #ItemId class="form-control" [(ngModel)]="selectedItem">
+              <option [value]="item.id" *ngFor="let item of itemList">{{item.id}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <input type="text" disabled class="form-control" id="description" *ngIf="selectedItem" value="{{selectedItem.description}}">
+      </div>
+      <div class="col-2">
+        <input type="text" disabled class="form-control" id="unit-price" *ngIf="selectedItem">
+      </div>
+      <div class="col-2">
+        <input type="text" disabled class="form-control" id="qty-on-hand" *ngIf="selectedItem">
+      </div>
+      <div class="col-2">
+        <input type="text" class="form-control" id="qty" placeholder="qty">
+      </div>
+      <div class="col-12">
+        <br>
+        <button class="btn btn-primary col-12" onclick="addToCart()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>$Id</th>
+            <th>Description</th>
+            <th>Unit Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody id="cart-body">
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <input type="text" disabled id="net-total">
+        </div>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-success col-12" onclick="placeOrder()">Place Order</button>
+      </div>
+    </div>
+  </div>

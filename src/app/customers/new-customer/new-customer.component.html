@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"  class="form-control" formControlName="name" id="name">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text"  class="form-control" formControlName="address" id="address">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="name">salary</label>
+                    <input type="text"  class="form-control" formControlName="salary" id="salary">
+                </div>
+            </div>
+            <div class="col-12">
+                <br>
+                <div class="form-group">
+                   <input type="submit" class="btn btn-primary col-12" value="save customer" [disabled]="customerForm.invalid">
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <hr>
+    <table class="table table-hover">
+        <tr>
+            <th>#id</th>
+            <th>Name</th>
+            <th>address</th>
+            <th>salary</th>
+            <th>update</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let tempCustomer of customerList">
+                <td>{{tempCustomer.id}}</td>
+                <td>{{tempCustomer.name}}</td>
+                <td>{{tempCustomer.address}}</td>
+                <td>{{tempCustomer.salary}}</td>
+                <td>
+                    <button class="btn btn-warning" routerLink="/update/{{tempCustomer.id}}">Update Customer</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteCustomer(tempCustomer.id)">Delete Customer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+

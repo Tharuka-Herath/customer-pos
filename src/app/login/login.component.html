@@ -1,0 +1,30 @@
+
+<div class="main-outer">
+    <form action="" [formGroup]="loginForm">
+    <div class="inner-wrapper">
+        
+        <h3>Login</h3>
+        <div class="form-group">
+            <!-- <label for="email">Email</label> -->
+            <input type="email" placeholder="email here" class="form-control" formControlName="email" id="email">
+        </div>
+        <br>
+        <div class="form-group">
+            <!-- <label for="password">Password</label> -->
+            <input type="password" placeholder="password here" class="form-control" formControlName="password" id="password">
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="login()">Login</button>
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-dark" (click)="createAnAccount()">Create and account</button>
+
+        </div>   
+           
+    </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,31 @@
+
+<div class="main-outer">
+    <form action="" [formGroup]="registerForm">
+    <div class="inner-wrapper">
+        
+        <h3>Register</h3>
+        <div class="form-group">
+            <!-- <label for="email">Email</label> -->
+            <input type="email" placeholder="email here" class="form-control" formControlName="email" id="email">
+        </div>
+        <br>
+        <div class="form-group">
+            <!-- <label for="password">Password</label> -->
+            <input type="password" placeholder="password here" class="form-control" formControlName="password" id="password">
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="register()">register</button>
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-dark" (click)="alreadyHaveAnAccount()">Already have an account</button>
+
+        </div>   
+           
+    </div>
+    </form>
+</div>
+
+
+
